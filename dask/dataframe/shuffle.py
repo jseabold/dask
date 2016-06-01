@@ -83,7 +83,7 @@ def set_partition(df, index, divisions, compute=False, drop=True, **kwargs):
     elif np.isscalar(index):
         metadata = df._pd.set_index(index, drop=drop)
     else:
-         raise ValueError('index must be Series or scalar, {0} given'.format(type(index)))
+        raise ValueError('index must be Series or scalar, {0} given'.format(type(index)))
 
     token = tokenize(df, index, divisions)
     always_new_token = uuid.uuid1().hex
